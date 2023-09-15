@@ -1,9 +1,14 @@
-import React from "react"
+import React from "react";
+import ContentContainer from "./ContentContainer";
 
-type Props = {}
+type Props = {};
 
 const Footer = (props: Props) => {
-  return <footer>Footer</footer>
-}
+  return (
+    <footer>
+      <ContentContainer>Footer</ContentContainer>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
