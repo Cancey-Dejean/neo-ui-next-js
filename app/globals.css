@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Quincy";
+  src: url("/fonts/QuincyCF-Regular.otf") format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "TT Commons";
+  src: url("/fonts/TTCommons-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TT Commons";
+  src: url("/fonts/TTCommons-Medium.otf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "TT Commons";
+  src: url("/fonts/TTCommons-DemiBold") format("opentype");
+  font-weight: 600;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply relative flex h-screen flex-col bg-black font-body text-[18px] font-normal leading-[28px] text-white;
+}
+
+a {
+  @apply inline-block;
+}
+
+/* Buttons */
+.btn {
+  /* @apply inline-block px-[20px] py-[10px] rounded-[5px] text-white font-medium text-[18px] leading-[28px] bg-[#FF5C00]; */
+}
