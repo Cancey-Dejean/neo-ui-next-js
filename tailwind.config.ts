@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         neoBlack: "#1b1b1b",
+        primary: "#1fa57d",
       },
       fontFamily: {
         body: ["TT Commons", "Helvetica", "Arial", "sans-serif"],

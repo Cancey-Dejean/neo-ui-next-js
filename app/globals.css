@@ -22,8 +22,8 @@
 
 @font-face {
   font-family: "TT Commons";
-  src: url("/fonts/TTCommons-DemiBold") format("opentype");
-  font-weight: 600;
+  src: url("/fonts/TTCommons-DemiBold.otf") format("opentype");
+  font-weight: 700;
 }
 
 html {
@@ -40,5 +40,17 @@ a {
 
 /* Buttons */
 .btn {
-  /* @apply inline-block px-[20px] py-[10px] rounded-[5px] text-white font-medium text-[18px] leading-[28px] bg-[#FF5C00]; */
+  @apply flex h-10 min-w-[124px] items-center justify-center rounded-md border-2 border-transparent text-[18px] font-semibold leading-[24px] transition-colors duration-[.3s] ease-in-out;
+}
+
+.btn__primary {
+  @apply bg-primary text-white hover:brightness-[1.08];
+}
+
+.btn__borderless {
+  @apply min-w-[auto] px-4 py-2 hover:underline;
+}
+
+.btn__white {
+  @apply hover:bg-primary bg-white text-black hover:text-white;
 }

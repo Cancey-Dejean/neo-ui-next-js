@@ -1,9 +1,7 @@
-import Header from "@/components/Header";
 import "./globals.css";
 import type { Metadata } from "next";
-import Footer from "@/components/Footer";
-import TopBar from "@/components/TopBar";
 import { topBarMenuList } from "@/constants";
+import { Footer, Header, TopBar } from "@/components";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -18,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div>
+        <div className="relative" id="main">
           <TopBar topBarMenuList={topBarMenuList} />
           <Header />
           {children}

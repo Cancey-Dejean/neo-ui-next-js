@@ -1,28 +1,54 @@
-import React from "react";
+"use client";
 import ContentContainer from "./ContentContainer";
-import Image from "next/image";
 import Link from "next/link";
 import NavMenu from "./NavMenu";
-import { navMenuList } from "@/constants";
+import { navMenuListBusiness, navMenuListPeople } from "@/constants";
 import ButtonLink from "./ButtonLink";
+import { Logo } from "./Icons";
+import { usePathname } from "next/navigation";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
+  const path = usePathname();
   return (
     <header className="sticky left-0 top-0 z-50 flex w-full justify-center bg-black py-4">
       <ContentContainer className="flex items-center gap-10">
         <Link href="/">
-          <Image src={"/images/logo.svg"} width={66} height={22} alt="logo" />
+          {path === "/for-business" ? <p>business logo</p> : <Logo />}
         </Link>
 
-        <div className="flex-1">
-          <NavMenu navMenuList={navMenuList} />
+        <div className="hidden lg:flex lg:flex-1">
+          {path === "/for-business" ? (
+            <NavMenu navMenuList={navMenuListBusiness} />
+          ) : (
+            <NavMenu navMenuList={navMenuListPeople} />
+          )}
         </div>
 
-        <div>
-          <Link href="/">Link</Link>
-          <ButtonLink linkable />
+        <div className="hidden lg:flex lg:items-center lg:gap-2">
+          {path === "/for-business" ? (
+            <ButtonLink variant="btn__white" label="Let's Talk" linkable />
+          ) : (
+            <>
+              <ButtonLink variant="btn__borderless" label="Log In" linkable />
+              <ButtonLink variant="btn__white" label="Sign Up" linkable />
+            </>
+          )}
+        </div>
+
+        {/* Mobile Menu */}
+        <div className="flex lg:hidden">
+          <MobileMenu />
         </div>
       </ContentContainer>
+
+      {/* Skip to content */}
+      <Link
+        href="#main"
+        className="absolute left-[-900px] top-20 bg-black p-4 py-4 text-xl focus-visible:left-10 focus-visible:border focus-visible:border-white focus-visible:outline-none"
+      >
+        Skip to main content
+      </Link>
     </header>
   );
 };

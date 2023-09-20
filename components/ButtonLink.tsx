@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 const ButtonLink = ({
   variant = "btn__primary",
-  size = "btn__large",
+  size = "",
   label = "Button Link",
   url = "#",
   btnType = "button",
@@ -11,8 +11,8 @@ const ButtonLink = ({
   linkable,
   onClick,
 }: {
-  variant?: "btn__primary" | "btn__inverted";
-  size?: "btn__small" | "btn__large";
+  variant?: "btn__primary" | "btn__white" | "btn__borderless";
+  size?: string;
   label?: string;
   url?: string;
   btnType?: "button" | "submit";

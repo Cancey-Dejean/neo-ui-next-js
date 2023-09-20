@@ -10,7 +10,7 @@ const ContentContainer = ({
   className = "",
 }: ContentContainerProps) => {
   return (
-    <div className={twMerge("mx-auto w-full max-w-[1129px] px-8", className)}>
+    <div className={twMerge("mx-auto w-full max-w-[1129px]", className)}>
       {children}
     </div>
   );
