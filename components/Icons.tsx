@@ -20,5 +20,31 @@ const Logo = ({ className = "" }: { className?: string }) => {
     </svg>
   );
 };
+const ArrowRight = ({ className = "" }: { className?: string }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
+      fill="none"
+      className={className}
+    >
+      <g clipPath="url(#clip0_2_752)">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M1.51217 6.16665H10.8205L6.75217 2.09832C6.4274 1.773 6.4274 1.24614 6.75217 0.920821H6.75633C7.08117 0.598821 7.60483 0.598821 7.92967 0.920821L13.4247 6.41665C13.7478 6.74168 13.7478 7.26662 13.4247 7.59165L7.92883 13.0833C7.6038 13.4064 7.07886 13.4064 6.75383 13.0833C6.43073 12.7583 6.43073 12.2334 6.75383 11.9083L10.8205 7.83332H1.51217C1.05193 7.83332 0.678833 7.46022 0.678833 6.99998C0.678833 6.53975 1.05193 6.16665 1.51217 6.16665Z"
+          fill="white"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_2_752">
+          <rect width="14" height="14" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
 
-export { Logo };
+export { Logo, ArrowRight };

@@ -3,7 +3,7 @@ import ContentContainer from "./ContentContainer";
 import Link from "next/link";
 import NavMenu from "./NavMenu";
 import { navMenuListBusiness, navMenuListPeople } from "@/constants";
-import ButtonLink from "./ButtonLink";
+import Button from "./Button";
 import { Logo } from "./Icons";
 import { usePathname } from "next/navigation";
 import MobileMenu from "./MobileMenu";
@@ -27,11 +27,11 @@ const Header = () => {
 
         <div className="hidden lg:flex lg:items-center lg:gap-2">
           {path === "/for-business" ? (
-            <ButtonLink variant="btn__white" label="Let's Talk" linkable />
+            <Button variant="btn__white" label="Let's Talk" linkable />
           ) : (
             <>
-              <ButtonLink variant="btn__borderless" label="Log In" linkable />
-              <ButtonLink variant="btn__white" label="Sign Up" linkable />
+              <Button variant="btn__borderless" label="Log In" linkable />
+              <Button variant="btn__white" label="Sign Up" linkable />
             </>
           )}
         </div>

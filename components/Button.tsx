@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
+import { ArrowRight } from "./Icons";
 
-const ButtonLink = ({
+const Button = ({
   variant = "btn__primary",
   size = "",
   label = "Button Link",
@@ -9,6 +10,7 @@ const ButtonLink = ({
   btnType = "button",
   className = "",
   linkable,
+  icon = false,
   onClick,
 }: {
   variant?: "btn__primary" | "btn__white" | "btn__borderless";
@@ -18,12 +20,12 @@ const ButtonLink = ({
   btnType?: "button" | "submit";
   className?: string;
   linkable?: boolean;
-  icon?: React.ReactNode;
+  icon?: boolean | React.ReactNode;
   onClick?: () => void;
 }) => {
   return linkable ? (
     <Link href={url} className={twMerge("btn", variant, size, className)}>
-      {label || <span>Link</span>}
+      {label || <span>Link</span>} {icon ? <span>{icon}</span> : null}
     </Link>
   ) : (
     <button
@@ -31,9 +33,9 @@ const ButtonLink = ({
       onClick={onClick}
       className={twMerge("btn", variant, size, className)}
     >
-      {label || <span>Button</span>}
+      {label || <span>Button</span>} {icon ? <span>{icon}</span> : null}
     </button>
   );
 };
 
-export default ButtonLink;
+export default Button;
